@@ -1,0 +1,203 @@
+{% extends "admin/layout.html" %}
+{% block title %}
+  Home
+{% endblock  %}
+{% block content %}
+<!-- Page-Title -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+           
+            <h4 class="page-title">Dashboard</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title end breadcrumb -->
+
+
+<div class="row text-center">
+
+    <div class="col-lg-2 col-md-4 col-sm-6">
+        <div class="card-box widget-box-one">
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow">Available Amount</p>
+                <h2 class="text-danger"><span data-plugin="counterup">{{bal}}/=</span></h2>
+          
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+
+    <div class="col-lg-2 col-md-4 col-sm-6">
+        <div class="card-box widget-box-one">
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow">VSSE Amount</p>
+                <h2 class="text-dark"><span data-plugin="counterup">{{vsse}}/=</span> </h2>
+               
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+
+
+    <div class="col-lg-2 col-md-4 col-sm-6">
+        <div class="card-box widget-box-one">
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow">Total Users</p>
+                <h2 class="text-primary"><span data-plugin="counterup">{{users_count}}</span> </h2>
+              
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+
+    <div class="col-lg-2 col-md-4 col-sm-6">
+        <div class="card-box widget-box-one">
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow">Transactions Made</p>
+                <h2 class="text-danger"><span data-plugin="counterup">{{transactions_count}}</span> </h2>
+               
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+
+    <div class="col-lg-2 col-md-4 col-sm-6">
+        <div class="card-box widget-box-one">
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow">Actual Payment</p>
+                <h2 class="text-danger"><span data-plugin="counterup">{{payment}}/=</span> </h2>
+               
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+
+</div>
+<!-- end row -->
+
+
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card-box">
+
+            <h4 class="header-title m-t-0">Daily Sales</h4>
+
+            <div class="widget-chart text-center">
+                <div id="morris-donut-example" style="height: 245px;"></div>
+                <ul class="list-inline chart-detail-list m-b-0">
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+
+    <div class="col-lg-4">
+        <div class="card-box">
+
+            <h4 class="header-title m-t-0">Statistics</h4>
+            <div id="morris-bar-example" style="height: 280px;"></div>
+        </div>
+    </div>
+    <!-- end col -->
+
+    <div class="col-lg-4">
+        <div class="card-box">
+
+            <h4 class="header-title m-t-0">Total Revenue</h4>
+            <div id="morris-line-example" style="height: 280px;"></div>
+        </div>
+    </div>
+    <!-- end col -->
+
+</div>
+<!-- end row -->
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card-box">
+            <h4 class="header-title m-t-0 m-b-30">Recent Users</h4>
+
+            <div class="table-responsive">
+                <table class="table table table-hover m-0">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>User Name</th>
+                            <th>Phone</th>
+                            <th>Location</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <span class="avatar-sm-box bg-success">L</span>
+                            </th>
+                            <td>
+                                <h5 class="m-0">Louis Hansen</h5>
+                                <p class="m-0 text-muted font-13"><small>Web designer</small></p>
+                            </td>
+                            <td>+12 3456 789</td>
+                            <td>USA</td>
+                            <td>07/08/2016</td>
+                        </tr>
+
+                      
+
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- table-responsive -->
+        </div>
+        <!-- end card -->
+    </div>
+    <!-- end col -->
+
+    <div class="col-lg-6">
+        <div class="card-box">
+            <h4 class="header-title m-t-0 m-b-30">Recent Transactions</h4>
+
+            <div class="table-responsive">
+                <table class="table table table-hover m-0">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>User Name</th>
+                            <th>Phone</th>
+                            <th>Location</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <span class="avatar-sm-box bg-success">L</span>
+                            </th>
+                            <td>
+                                <h5 class="m-0">Louis Hansen</h5>
+                                <p class="m-0 text-muted font-13"><small>Web designer</small></p>
+                            </td>
+                            <td>+12 3456 789</td>
+                            <td>USA</td>
+                            <td>07/08/2016</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- table-responsive -->
+        </div>
+        <!-- end card -->
+    </div>
+    <!-- end col -->
+
+</div>
+<!-- end row -->
+
+
+{% endblock %}

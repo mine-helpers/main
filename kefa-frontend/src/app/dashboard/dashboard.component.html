@@ -1,0 +1,52 @@
+<!-- Navigation Bar-->
+ <app-navigation-bar></app-navigation-bar>
+<!-- End Navigation Bar-->
+
+
+<div class="wrapper">
+  <div class="container">
+
+    <!-- Page-Title -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="page-title-box">
+         <a class="btn btn-danger btn-rounded btn-custom w-lg waves-effect waves-light">Mine Dashboard</a>
+        </div>
+      </div>
+    </div>
+    <!-- end page title end breadcrumb -->
+
+
+    <div class="row">
+        <div class="col-md-4">
+           <app-side-bar></app-side-bar>
+        </div>
+        <div class="col-md-8">
+          <div class="table-box">
+              <div class="table-detail mail-right">
+          <router-outlet></router-outlet>
+              </div>
+          </div>
+        </div>
+      <!-- end col -->
+    </div>
+    <!-- end row -->
+
+
+
+    <!-- Footer -->
+    <footer class="footer text-right">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            © {{currentYear }}. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+  </div>
+  <!-- end container -->
+</div>
+<!-- end wrapper -->

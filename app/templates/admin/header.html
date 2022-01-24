@@ -1,0 +1,103 @@
+<header id="topnav">
+    <div class="topbar-main">
+        <div class="container">
+
+            <!-- Logo container-->
+            <div class="logo">
+                <!-- Text Logo -->
+                <!--<a href="index.html" class="logo">-->
+                <!--Zircos-->
+                <!--</a>-->
+                <!-- Image Logo -->
+                <a href="{{  url_for('admin.index')}}" class="logo">
+                            <img src="{{ url_for('static',filename='kfp-logo.jpg')}}" alt="" height="30">
+                </a>
+
+            </div>
+            <!-- End Logo container-->
+
+
+            <div class="menu-extras">
+
+                <ul class="nav navbar-nav navbar-right pull-right">
+
+
+
+                    <li class="dropdown navbar-c-items">
+                        <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="{{ url_for('static',filename='assets/images/users/avatar-1.jpg')}}" alt="user-img" class="img-circle"> </a>
+                        <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
+                            <li class="text-center">
+                                <h5>Hi, {{current_user.username}}</h5>
+                            </li>
+                            {% if current_user.is_administrator %}
+                            <li><a href="{{ url_for('admin.settings')}}"><i class="ti-clog m-r-5"></i>Settings</a></li>
+                            {% endif %}                    
+                            <li><a href="{{url_for('auth.logout')}}"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                        </ul>
+
+                    </li>
+                </ul>
+                <div class="menu-item">
+                    <!-- Mobile menu toggle-->
+                    <a class="navbar-toggle">
+                        <div class="lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+                    <!-- End mobile menu toggle-->
+                </div>
+            </div>
+            <!-- end menu-extras -->
+
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end topbar-main -->
+
+    <div class="navbar-custom">
+        <div class="container">
+            <div id="navigation">
+                <!-- Navigation Menu-->
+                <ul class="navigation-menu">
+
+                    <li class="has-submenu">
+                        <a href="{{url_for('admin.index')}}"><i class="mdi mdi-view-dashboard"></i>Dashboard</a>
+                    </li>
+                    <!--
+                    <li class="has-submenu">
+                        <a href="#"><i class="mdi mdi-comment-text"></i>Blog</a>
+                        <ul class="submenu">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Blog List</a></li>
+                            <li><a href="#">Blog Column</a></li>
+                            <li><a href="#">Blog Post</a></li>
+                            <li><a href="#">Add Blog</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="has-submenu">
+                        <a href="{{url_for('admin.packages')}}"><i class="mdi mdi-diamond"></i>Donation time</a>
+                    </li>
+                   
+                    <li class="has-submenu">
+                        <a href="{{url_for('admin.volunteers')}}"><i class="mdi mdi-book-multiple"></i>Volunteers</a>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="{{url_for('admin.merchants')}}"><i class="mdi mdi-book-multiple"></i>Merchants</a>
+                    </li>
+                    <!-- 
+                    <li class="has-submenu">
+                        <a href="#"><i class="mdi mdi-google-pages"></i>Pages</a>
+                    </li>
+                -->
+                </ul>
+                <!-- End navigation menu -->
+            </div>
+            <!-- end #navigation -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end navbar-custom -->
+</header>

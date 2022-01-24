@@ -1,0 +1,54 @@
+<div class="row">
+
+  <div class="col-xs-12">
+    <div class="mails">
+      <h4 class="page-title">Load Donation Time</h4>
+      <div class="table-box">
+        <div class="table-detail mail-right">
+
+          <div [ngBusy]='busy' class="row">
+            <div class="col-sm-12">
+              <div class="card-box m-t-20">
+                <div class="">
+                 <app-alert></app-alert>
+                  <form [formGroup]='form' (ngSubmit)='handleSubmit()'>
+                    <div class="form-group">
+                      <input type="text" [ngClass]="{'parsley-error': submitted && !voucher.valid }" [formControl]='form.controls["voucher"]' class="form-control"
+                        placeholder="Donation Voucher">
+                      <ul *ngIf='(submitted )' class="parsley-errors-list filled" id="parsley-id-5">
+                        <li *ngIf='voucher.hasError("validity")' class="parsley-required">
+                          {{ voucher.getError('validity')}}
+                        </li>
+                        <li *ngIf='voucher.hasError("required")' class="parsley-required">
+                          This field is required
+                        </li>
+                        <li *ngIf='(voucher.hasError("minlength") || voucher.hasError("maxlength"))' class="parsley-required">
+                          Donation voucher must be 14 characters
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="btn-toolbar form-group m-b-0">
+                      <div class="pull-right">
+                        <button class="btn btn-purple waves-effect waves-light" type="submit"> <span>Load</span> <i class="fa fa-send m-l-10"></i> </button>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- End row -->
+
+        </div>
+        <!-- table detail -->
+      </div>
+      <!-- end table box -->
+
+    </div>
+    <!-- mails -->
+  </div>
+</div>
+<!-- end row -->

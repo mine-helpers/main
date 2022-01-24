@@ -1,0 +1,76 @@
+<!-- HOME -->
+<section>
+  
+  <div class="container-alt">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="wrapper-page">
+          <div class="m-t-40 account-pages">
+            <div class="text-center account-logo-box">
+              <h2 class="text-uppercase">
+                <a class="text-success">
+                      <h4 style="color:white;">Kefa Foundation</h4>
+                </a>
+              </h2>
+            </div>
+            <div class="account-content" [ngBusy]="busy" >  
+              <app-alert></app-alert>
+              <div *ngIf='formErrors' class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <p *ngFor="let error of formErrors">
+                  {{error}}
+                </p>
+              </div>
+              <form [formGroup]='form' (ngSubmit)='handleSubmit()' class="form-horizontal" >
+                <div class="form-group ">
+                  <div class="col-xs-12 input-group">
+                    <div class="input-group-addon">+256</div>
+                    <input class="form-control" type="text" [ngClass]="{'parsley-error': submitted && !identifier.valid }" [formControl]='form.controls["identifier"]' placeholder="Phone Number">
+                  </div>
+                  <ul *ngIf='(submitted || identifier.dirty)' class="parsley-errors-list filled" id="parsley-id-5">
+                    <li *ngIf='identifier.hasError("validity")' class="parsley-required">
+                      {{ identifier.getError('validity')}}
+                    </li>
+                    <li *ngIf='identifier.hasError("required")' class="parsley-required">
+                      This field is required
+                    </li>
+                  </ul>
+                </div>
+                <div class="form-group ">
+                  <div class="col-xs-12 input-group">
+                    <div class="input-group-addon fa fa-key"></div>
+                    <input class="form-control" type="password" [ngClass]="{'parsley-error': submitted && !password.valid }" [formControl]='form.controls["password"]' placeholder="Password">
+                  </div>
+                  <ul *ngIf='(submitted || password.dirty)' class="parsley-errors-list filled" id="parsley-id-5">
+                    <li *ngIf='password.hasError("required")' class="parsley-required">This field is required.</li>
+
+                    <li *ngIf='password.hasError("validity")' class="parsley-required">
+                      {{ password.getError('validity')}}
+                    </li>
+                  </ul>
+                </div>
+                <div class="form-group account-btn text-center m-t-10">
+                  <div class="col-xs-12">
+                    <button class="btn w-md btn-danger btn-bordered waves-effect waves-light" type="submit">Log In</button>
+                  </div>
+                </div>
+              </form>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <!-- end card-box-->
+
+          <div class="row m-t-50">
+            <div class="col-sm-12 text-center">
+              <p class="text-muted">Don't have account?<a [routerLink]='["/register"]' class="text-primary m-l-5"><b>Register</b></a></p>
+            </div>
+          </div>
+
+        </div>
+        <!-- end wrapper -->
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END HOME -->

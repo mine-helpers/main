@@ -1,0 +1,9 @@
+{
+    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "/Users/wikipedia/envs/kefa-Nck6cj3J/bin/python",
+    "cSpell.words": [
+        "gunicorn",
+        "itsdangerous",
+        "Werkzeug"
+    ]
+}

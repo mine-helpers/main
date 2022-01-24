@@ -1,0 +1,67 @@
+{% extends "admin/layout.html" %}
+{% block title %}
+   Edit Setting
+{% endblock  %}
+{% block content %}
+<!-- Page-Title -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Editing Setting</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title end breadcrumb -->
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card-box">
+
+            <div class="row">
+                <div class="col-sm-12 col-xs-12 col-md-3"></div>
+                <div class="col-sm-12 col-xs-12 col-md-6">
+                    <h4 class="header-title m-t-0">Edit Value of Setting: {{setting.name}}</h4>
+                    {% if form.errors %}
+                        {% for error in form.errors %}
+                            <p>{{error}}</p>
+                        {% endfor %}
+                    {% else %}
+                    {% endif %}
+                    <div class="p-20">
+                        <form action="{{url_for('admin.edit_setting',id=setting.id)}}" method="POST"  data-parsley-validate novalidate>
+                            {{ form.hidden_tag()}}
+                            <div class="form-group">
+                                <label for="emailAddress">Setting Value<span class="text-danger">*</span></label>
+                                {{ form.value(class='form-control')}}
+                                <ul class="parsley-errors-list filled" id="parsley-id-57">
+                                        {% if form.value.errors %}
+                                        {% for error in form.value.errors  %}
+                                        <li class="parsley-required">{{error}}</li>
+                                        {% endfor %}
+                                     {% endif %}
+                                </ul> 
+                            </div>                         
+
+                            <div class="form-group text-right m-b-0">
+                                {{form.submit(class='btn btn-primary')}}
+
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-xs-12 col-md-3"></div>
+
+         
+
+        </div>
+        <!-- end ard-box -->
+    </div>
+    <!-- end col-->
+
+</div>
+<!-- end row -->
+
+{% endblock %}

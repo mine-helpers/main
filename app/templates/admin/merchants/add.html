@@ -1,0 +1,116 @@
+{% extends "admin/layout.html" %}
+{% block title %}
+   New Merchant
+{% endblock  %}
+{% block content %}
+<!-- Page-Title -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">New Merchant</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title end breadcrumb -->
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card-box">
+
+            <div class="row">
+                <div class="col-sm-12 col-xs-12 col-md-3"></div>
+                <div class="col-sm-12 col-xs-12 col-md-6">
+                    <h4 class="header-title m-t-0">Add New Merchant</h4>
+                
+                    <div class="p-20">
+                        <form action="{{url_for('admin.create_merchant')}}" method="POST"  data-parsley-validate novalidate>
+                            {{ form.hidden_tag()}}
+                            <div class="form-group">
+                                <label for="userName">Name<span class="text-danger">*</span></label>
+                                {{ form.name(class='form-control')}}
+                                <ul class="parsley-errors-list filled" id="parsley-id-57">
+                                        {% if form.name.errors %}
+                                        {% for error in form.name.errors  %}
+                                        <li class="parsley-required">{{error}}</li>
+                                        {% endfor %}
+                                     {% endif %}
+                                </ul>                           
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Email<span class="text-danger">*</span></label>
+                                {{ form.email(class='form-control')}}
+                                <ul class="parsley-errors-list filled" id="parsley-id-57">
+                                        {% if form.email.errors %}
+                                        {% for error in form.email.errors  %}
+                                        <li class="parsley-required">{{error}}</li>
+                                        {% endfor %}
+                                     {% endif %}
+                                </ul> 
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Username<span class="text-danger">*</span></label>
+                                {{ form.username(class='form-control')}}
+                                <ul class="parsley-errors-list filled" id="parsley-id-57">
+                                        {% if form.username.errors %}
+                                        {% for error in form.username.errors  %}
+                                        <li class="parsley-required">{{error}}</li>
+                                        {% endfor %}
+                                     {% endif %}
+                                </ul> 
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Phone Number<span class="text-danger">*</span></label>
+                                {{ form.phone_number(class='form-control')}}
+                                <ul class="parsley-errors-list filled" id="parsley-id-57">
+                                        {% if form.phone_number.errors %}
+                                        {% for error in form.phone_number.errors  %}
+                                        <li class="parsley-required">{{error}}</li>
+                                        {% endfor %}
+                                     {% endif %}
+                                </ul> 
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Password<span class="text-danger">*</span></label>
+                                {{ form.password(class='form-control')}}
+                                <ul class="parsley-errors-list filled" id="parsley-id-57">
+                                        {% if form.password.errors %}
+                                        {% for error in form.password.errors  %}
+                                        <li class="parsley-required">{{error}}</li>
+                                        {% endfor %}
+                                     {% endif %}
+                                </ul> 
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Confirm Password<span class="text-danger">*</span></label>
+                                {{ form.password2(class='form-control')}}
+                                <ul class="parsley-errors-list filled" id="parsley-id-57">
+                                        {% if form.password2.errors %}
+                                        {% for error in form.password2.errors  %}
+                                        <li class="parsley-required">{{error}}</li>
+                                        {% endfor %}
+                                     {% endif %}
+                                </ul> 
+                            </div>
+
+                            <div class="form-group text-right m-b-0">
+                                {{form.submit(class='btn btn-primary')}}
+
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-xs-12 col-md-3"></div>
+
+         
+
+        </div>
+        <!-- end ard-box -->
+    </div>
+    <!-- end col-->
+
+</div>
+<!-- end row -->
+
+{% endblock %}
